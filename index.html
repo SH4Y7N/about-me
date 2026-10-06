@@ -371,7 +371,7 @@
     </nav>
     <div class="tools">
       <button class="tbtn kbtn" id="palBtn" type="button" aria-label="Open command menu"><span class="kbd d">Ctrl K</span><span class="m">☰</span></button>
-      <button class="tbtn" id="langBtn" type="button">فارسی</button>
+      <button class="tbtn" id="langBtn" type="button"></button>
       <button class="tbtn" id="themeBtn" type="button" aria-label="Toggle light and dark mode">☀</button>
     </div>
   </div>
@@ -817,7 +817,7 @@ var T = {
   $('langBtn').addEventListener('click', function(){ setLang(lang === 'en' ? 'fa' : 'en'); });
 
   /* ---------- theme (dark by default) ---------- */
-  var themeBtn = $('themeBtn');
+var themeBtn = $('themeBtn');
   function setTheme(t){
     root.setAttribute('data-theme', t);
     themeBtn.textContent = (t === 'dark') ? '☀' : '☾';
@@ -827,7 +827,6 @@ var T = {
   function toggleTheme(){ setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'); }
   themeBtn.addEventListener('click', toggleTheme);
   setTheme(store.get('theme') || 'dark');
-
   /* ---------- buttons inside cards ---------- */
   $('runBtn').addEventListener('click', function(){ resIndex = pickNew(T[lang].results.length, resIndex); renderTerm(); });
   secBtn.addEventListener('click', function(){
